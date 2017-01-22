@@ -11,17 +11,17 @@
 // (This is the original behaviour of ProjectScaffold prior to multi project support)
 let referenceBinaries = []
 // Web site location for the generated documentation
-let website = "/##ProjectName##"
+let website = "/SimpleVideoEncoder"
 
-let githubLink = "##GitUrl##/##GitHome##/##GitName##"
+let githubLink = "https://github.com/robertpi/SimpleVideoEncoder"
 
 // Specify more information about your project
 let info =
-  [ "project-name", "##ProjectName##"
-    "project-author", "##Author##"
-    "project-summary", "##Summary##"
+  [ "project-name", "SimpleVideoEncoder"
+    "project-author", "Robert Pickering"
+    "project-summary", "Project has no summmary; update build.fsx"
     "project-github", githubLink
-    "project-nuget", "http://nuget.org/packages/##ProjectName##" ]
+    "project-nuget", "http://nuget.org/packages/SimpleVideoEncoder" ]
 
 // --------------------------------------------------------------------------------------
 // For typical project, no changes are needed below

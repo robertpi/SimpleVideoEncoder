@@ -1,0 +1,31 @@
+type file
+id SimpleVideoEncoder
+title
+    SimpleVideoEncoder
+owners
+    Robert Pickering
+authors 
+    Robert Pickering
+projectUrl
+    https://github.com/robertpi/SimpleVideoEncoder
+iconUrl
+    https://raw.githubusercontent.com/robertpi/SimpleVideoEncoder/master/docs/files/img/logo.png
+licenseUrl
+    https://github.com/robertpi/SimpleVideoEncoder/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    mp4 video
+summary
+    Summary not set
+description
+    Description not set
+files
+	bin/Debug/SimpleVideoEncoder.dll => lib
+	bin/Debug/SimpleVideoEncoder.pdb => lib
+	bin/Debug/SimpleVideoEncoder.FlatApi.dll => lib
+	bin/Debug/SimpleVideoEncoder.FlatApi.pdb => lib
+
+
