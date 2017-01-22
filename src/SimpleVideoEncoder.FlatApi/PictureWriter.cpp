@@ -110,7 +110,7 @@ EXPORT Video *NewVideoEncoder(LPCWSTR file, unsigned int width, unsigned int hei
 	return video;
 }
 
-EXPORT void AddFrame(struct Video *video, const byte *buffer, unsigned long bufferLength,  int imageWidth, int imageHeight, int imageWidth2)
+EXPORT void AddFrame(struct Video *video, const byte *buffer, unsigned long bufferLength,  int imageWidth, int imageHeight)
 {
 
 	// Create a media sample   
@@ -129,9 +129,7 @@ EXPORT void AddFrame(struct Video *video, const byte *buffer, unsigned long buff
 	// Copy the picture into the buffer
 	unsigned char *pbBuffer = nullptr;
 	CHK(spBuffer->Lock(&pbBuffer, nullptr, nullptr));
-	//CHK(MFCopyImage(pbBuffer + 4 * video->width * (video->height - imageHeight),
-	//	4 * video->width, buffer, -4 * imageWidth2, 4 * imageWidth2, imageHeight));
-	memcpy(pbBuffer, buffer, video->height * imageWidth2 * 4);
+	memcpy(pbBuffer, buffer, video->height * imageWidth * 4);
 	CHK(spBuffer->Unlock());
 
 	// Write the media sample   

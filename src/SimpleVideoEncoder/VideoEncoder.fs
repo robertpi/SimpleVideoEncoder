@@ -12,7 +12,7 @@ module VideoFunctions =
     extern IntPtr NewVideoEncoder(IntPtr filename, uint32 width, uint32 height)
 
     [<DllImport(Common.LibraryName, CallingConvention = CallingConvention.Cdecl)>]
-    extern void AddFrame(IntPtr video, IntPtr unmanagedBuffer, uint64 bufferLength, int width, int height, int width2)
+    extern void AddFrame(IntPtr video, IntPtr unmanagedBuffer, uint32 bufferLength, int width, int height)
 
     [<DllImport(Common.LibraryName, CallingConvention = CallingConvention.Cdecl)>]
     extern void Finalize(IntPtr video)
@@ -56,7 +56,7 @@ type VideoEncoder(filename: string, width: int, height: int) =
                 image
         let buffer = arrayOfImage image
         let bufferHdl = GCHandle.Alloc(buffer, GCHandleType.Pinned)
-        VideoFunctions.AddFrame(video, bufferHdl.AddrOfPinnedObject(), uint64 buffer.LongLength, image.Width, image.Height, image.Width)
+        VideoFunctions.AddFrame(video, bufferHdl.AddrOfPinnedObject(), uint32 buffer.Length, image.Width, image.Height)
         bufferHdl.Free()
 
     interface IDisposable with
@@ -65,3 +65,4 @@ type VideoEncoder(filename: string, width: int, height: int) =
 
     member this.Dispose() =
         (this :> IDisposable).Dispose()
+            
